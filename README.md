@@ -3,6 +3,19 @@ Weevely
 
 [![Build Status](https://travis-ci.org/epinna/weevely3.svg?branch=master)](https://travis-ci.org/epinna/weevely3)
 
+## Name
+
+Weevely - Weaponized web shell
+
+## Usage
+
+```
+weevely generate <password> <path>
+weevely <URL> <password> [cmd]
+```
+  
+## Description
+
 Weevely is a web shell designed for post-exploitation purposes that can be extended over the network at runtime.
 
 Upload weevely PHP agent to a target web server to get remote shell access to it. It has more than 30 modules to assist administrative tasks, maintain access, provide situational awareness, elevate privileges, and spread into the target network.
@@ -13,11 +26,11 @@ Read the [Getting Started](https://github.com/epinna/weevely3/wiki/Getting-Start
 
 Browse the [Wiki](https://github.com/epinna/weevely3/wiki) to read examples and use cases.
 
-**Features** 
+### Features
 
 * Shell access to the target
 * SQL console pivoting on the target
-* HTTP proxy pivoting on the target
+* HTTP/HTTPS proxy to browse through the target
 * Upload and download files
 * Spawn reverse and direct TCP shells
 * Audit remote target security
@@ -26,11 +39,11 @@ Browse the [Wiki](https://github.com/epinna/weevely3/wiki) to read examples and 
 * Mount the remote filesystem
 * Bruteforce SQL accounts pivoting on the target
 
-**Agent**
+### Agent
 
 The agent is a small, polymorphic PHP script hardly detected by AV and the communication protocol is obfuscated within HTTP requests.
 
-**Modules**
+### Modules
 
 | Module                      | Description
 | --------------------------- | ------------------------------------------ |
@@ -38,7 +51,6 @@ The agent is a small, polymorphic PHP script hardly detected by AV and the commu
 | :audit_suidsgid             |  Find files with SUID or SGID flags.
 | :audit_disablefunctionbypass|  Bypass disable_function restrictions with mod_cgi and .htaccess.
 | :audit_etcpasswd            |  Read /etc/passwd with different techniques.
-| :audit_linuxprivchecker     |  Upload and execute linuxprivchecker.
 | :audit_phpconf              |  Audit PHP configuration.
 | :shell_sh                   |  Execute shell commands.
 | :shell_su                   |  Execute commands with su.
@@ -76,10 +88,10 @@ The agent is a small, polymorphic PHP script hardly detected by AV and the commu
 | :net_mail                   |  Send mail.
 | :net_phpproxy               |  Install PHP proxy on the target.
 | :net_curl                   |  Perform a curl-like HTTP request.
-| :net_proxy                  |  Proxify local HTTP traffic passing through the target.
+| :net_proxy                  |  Run local proxy to pivot HTTP/HTTPS browsing through the target.
 | :net_scan                   |  TCP Port scan.
 | :net_ifconfig               |  Get network interfaces addresses.
 
-**Development**
+### Development
 
 Weevely is easily extendible to implement internal audit, account enumerator, sensitive data scraper, network scanner, make the modules work as a HTTP or SQL client and do a whole lot of other cool stuff.
